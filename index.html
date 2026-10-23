@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architectural Design & Visual Development | Portfolio</title>
+  <meta name="description" content="Architectural Design, Visual Development, and high-end architectural visualization serving clients across U.S. and internationally." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              black: '#121212',
+              surface: '#1A1A1A',
+              border: '#2A2A2A',
+              muted: '#8E8E93',
+              accent: '#E5E5EA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #121212; }
+    ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3E3E3E; }
+  </style>
+</head>
+<body class="bg-[#121212] text-[#F5F5F7] font-sans antialiased selection:bg-white selection:text-black">
+
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="font-bold tracking-tight text-lg uppercase">[YOUR NAME / STUDIO]</span>
+        <span class="font-mono text-[10px] text-brand-muted tracking-widest uppercase">Architectural Design & Visualization</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+        <a href="#projects" class="hover:text-white transition">Projects</a>
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#resume" class="hover:text-white transition">Background</a>
+        <a href="#blog" class="hover:text-white transition">Field Notes</a>
+        <a href="#product" class="hover:text-white transition">Resources</a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#contact" class="px-5 py-2.5 rounded-full border border-white/20 text-xs font-mono tracking-wider uppercase hover:bg-white hover:text-black transition">
+          Inquire / Hire
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="flex items-center gap-2 mb-6">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono text-xs text-brand-muted uppercase tracking-wider">Available for Contract & Full-Time (In-Office / Remote / Hybrid)</span>
+    </div>
+
+    <h1 class="text-4xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-8 max-w-5xl">
+      Architectural Design, Visual Development, and High-End Architectural Visualization.
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-brand-border/60">
+      <p class="text-brand-muted leading-relaxed text-sm md:col-span-2">
+        Serving architectural studios, developers, and creative agencies across the U.S. and internationally. Bridging conceptual design rigor with cinematic rendering to resolve complex spatial challenges and win projects.
+      </p>
+      <div class="flex flex-col gap-3 font-mono text-xs">
+        <a href="#projects" class="inline-flex items-center gap-2 text-white hover:text-brand-muted transition">
+          <span>↓</span> EXPLORE SELECTED WORKS
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 text-brand-muted hover:text-white transition">
+          <span>→</span> DISCUSS A COLLABORATION
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS SHOWCASE ================= -->
+  <section id="projects" class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 01. Portfolio ]</span>
+        <h2 class="text-3xl md:text-5xl font-bold mt-2">Selected Architectural Works</h2>
+      </div>
+      <p class="text-brand-muted text-sm max-w-md">
+        Click any project card to inspect design intent, the spatial problems solved, visualization techniques, and cross-referenced field notes.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Project Card 1 -->
+      <article onclick="openModal('project1')" class="group cursor-pointer bg-brand-surface rounded-xl overflow-hidden border border-brand-border hover:border-neutral-500 transition duration-300">
+        <div class="aspect-[16/10] overflow-hidden bg-neutral-900 relative">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Minimalist Pavilion" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" />
+          <div class="absolute top-4 left-4 font-mono text-[11px] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider">
+            Spatial Concept
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold group-hover:text-neutral-300 transition">The Monolith Pavilion</h3>
+            <span class="font-mono text-xs text-brand-muted">2026</span>
+          </div>
+          <p class="text-brand-muted text-sm line-clamp-2">Exploring material weight, brutalist monolithic concrete expressions, and diffused solar orientation in coastal climates.</p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-brand-muted">Visualization & Schematic Design</span>
+            <span class="text-white group-hover:translate-x-1 transition">View Case Study →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 2 -->
+      <article onclick="openModal('project2')" class="group cursor-pointer bg-brand-surface rounded-xl overflow-hidden border border-brand-border hover:border-neutral-500 transition duration-300">
+        <div class="aspect-[16/10] overflow-hidden bg-neutral-900 relative">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Urban High-Rise" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" />
+          <div class="absolute top-4 left-4 font-mono text-[11px] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider">
+            High-End Visualization
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold group-hover:text-neutral-300 transition">Aura Residential Tower</h3>
+            <span class="font-mono text-xs text-brand-muted">2025</span>
+          </div>
+          <p class="text-brand-muted text-sm line-clamp-2">Cinematic day-to-night lighting study showcasing facade articulation for client stakeholder presentations.</p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-brand-muted">3D Art Direction & Lighting</span>
+            <span class="text-white group-hover:translate-x-1 transition">View Case Study →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 3 -->
+      <article onclick="openModal('project3')" class="group cursor-pointer bg-brand-surface rounded-xl overflow-hidden border border-brand-border hover:border-neutral-500 transition duration-300">
+        <div class="aspect-[16/10] overflow-hidden bg-neutral-900 relative">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Interior Detail" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" />
+          <div class="absolute top-4 left-4 font-mono text-[11px] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider">
+            Interior Atmosphere
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold group-hover:text-neutral-300 transition">Atelier Sanctuaria</h3>
+            <span class="font-mono text-xs text-brand-muted">2025</span>
+          </div>
+          <p class="text-brand-muted text-sm line-clamp-2">Micro-perforated acoustic timber screens balancing ambient natural daylight with acoustic dampening for gallery spaces.</p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-brand-muted">Interior Architecture</span>
+            <span class="text-white group-hover:translate-x-1 transition">View Case Study →</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 4 -->
+      <article onclick="openModal('project4')" class="group cursor-pointer bg-brand-surface rounded-xl overflow-hidden border border-brand-border hover:border-neutral-500 transition duration-300">
+        <div class="aspect-[16/10] overflow-hidden bg-neutral-900 relative">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80" alt="Cultural Center" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" />
+          <div class="absolute top-4 left-4 font-mono text-[11px] bg-black/70 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider">
+            Public Competition
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold group-hover:text-neutral-300 transition">Civic Forum & Library</h3>
+            <span class="font-mono text-xs text-brand-muted">2024</span>
+          </div>
+          <p class="text-brand-muted text-sm line-clamp-2">Pedestrian circulation integration through cantilevered public terrace systems and parametric louvers.</p>
+          <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-brand-muted">Competition Entry</span>
+            <span class="text-white group-hover:translate-x-1 transition">View Case Study →</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="mb-16">
+      <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 02. Capabilities ]</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-2">Professional Services</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service 1 -->
+      <div class="p-8 rounded-xl bg-brand-surface border border-brand-border">
+        <span class="font-mono text-xs text-brand-muted">01 / ARCHITECTURE</span>
+        <h3 class="text-xl font-bold mt-4 mb-3">Architectural Design</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+          Schematic design, spatial planning, facade development, and design problem solving from concept through presentation packages.
+        </p>
+        <ul class="text-xs font-mono text-brand-muted space-y-2">
+          <li>+ Conceptual Modeling</li>
+          <li>+ Facade & Envelope Studies</li>
+          <li>+ Presentation Drawings</li>
+        </ul>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="p-8 rounded-xl bg-brand-surface border border-brand-border">
+        <span class="font-mono text-xs text-brand-muted">02 / VISUALIZATION</span>
+        <h3 class="text-xl font-bold mt-4 mb-3">High-End 3D Visualization</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+          High-end architectural renders, lighting analysis, mood formulation, and cinematic exterior/interior visualization for winning bids.
+        </p>
+        <ul class="text-xs font-mono text-brand-muted space-y-2">
+          <li>+ Photorealistic Exteriors / Interiors</li>
+          <li>+ Atmosphere & Lighting Art Direction</li>
+          <li>+ Competition Visuals</li>
+        </ul>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="p-8 rounded-xl bg-brand-surface border border-brand-border">
+        <span class="font-mono text-xs text-brand-muted">03 / DEVELOPMENT</span>
+        <h3 class="text-xl font-bold mt-4 mb-3">Visual Development</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+          Visual strategy for architectural firms—crafting a cohesive design narrative, client pitch decks, and visual communication assets.
+        </p>
+        <ul class="text-xs font-mono text-brand-muted space-y-2">
+          <li>+ Design Storytelling & Diagrams</li>
+          <li>+ Color & Material Palette Research</li>
+          <li>+ Client Deck Curation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VISUAL RESUME / EXPERIENCE ================= -->
+  <section id="resume" class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 03. Background ]</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Experience & Problem Solving</h2>
+        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+          I collaborate with studios across time zones on a contract or embedded full-time basis, resolving design bottlenecks with agility.
+        </p>
+        <a href="#contact" class="inline-flex items-center gap-2 font-mono text-xs text-white underline underline-offset-4">
+          Request Full PDF Resume / CV →
+        </a>
+      </div>
+
+      <!-- Timeline -->
+      <div class="md:col-span-2 space-y-8">
+        <div class="border-l border-brand-border pl-6 relative">
+          <span class="w-2.5 h-2.5 rounded-full bg-white absolute -left-[5px] top-1.5"></span>
+          <span class="font-mono text-xs text-brand-muted">2023 — Present</span>
+          <h4 class="text-lg font-bold mt-1">Lead Architectural Designer & 3D Specialist</h4>
+          <p class="text-xs font-mono text-brand-muted mb-2">[Studio / Independent Practice] · Contract & International</p>
+          <p class="text-brand-muted text-sm">Authored schematic design proposals and generated competition-winning renders for luxury residential and civic scale developments across the US.</p>
+        </div>
+
+        <div class="border-l border-brand-border pl-6 relative">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-border absolute -left-[5px] top-1.5"></span>
+          <span class="font-mono text-xs text-brand-muted">2020 — 2023</span>
+          <h4 class="text-lg font-bold mt-1">Architectural Designer & Visualizer</h4>
+          <p class="text-xs font-mono text-brand-muted mb-2">[Architectural Firm Name] · In-Office & Hybrid</p>
+          <p class="text-brand-muted text-sm">Led 3D visualization workflows, coordinated with BIM teams, resolved interior finishes, and prepared presentation materials for client approvals.</p>
+        </div>
+
+        <div class="border-l border-brand-border pl-6 relative">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-border absolute -left-[5px] top-1.5"></span>
+          <span class="font-mono text-xs text-brand-muted">Core Toolkit</span>
+          <h4 class="text-lg font-bold mt-1">Technical & Software Stack</h4>
+          <div class="flex flex-wrap gap-2 mt-3 font-mono text-xs">
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">Rhino / Grasshopper</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">3ds Max / Corona / V-Ray</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">Revit</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">Photoshop & Lightroom</span>
+            <span class="px-3 py-1 bg-brand-surface rounded border border-brand-border">Unreal Engine / Twinmotion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BLOG / FIELD NOTES ================= -->
+  <section id="blog" class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 04. Field Notes & Thoughts ]</span>
+        <h2 class="text-3xl md:text-5xl font-bold mt-2">Writing & Methodologies</h2>
+      </div>
+      <p class="text-brand-muted text-sm max-w-md">
+        Dissecting architectural philosophy, visualization lighting theory, and behind-the-scenes problem solving.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Article 1 -->
+      <article class="p-6 rounded-xl bg-brand-surface border border-brand-border hover:border-neutral-500 transition">
+        <span class="font-mono text-xs text-brand-muted">Design Methodology · 6 min read</span>
+        <h3 class="text-lg font-bold mt-3 mb-2">Lighting as Structure: Directing Emotional Weight in Renderings</h3>
+        <p class="text-brand-muted text-sm mb-4">How manipulating artificial exposure values clarifies complex geometric intersections for architectural clients.</p>
+        <a href="#projects" class="font-mono text-xs text-white hover:underline">Cross-reference with: Monolith Pavilion →</a>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="p-6 rounded-xl bg-brand-surface border border-brand-border hover:border-neutral-500 transition">
+        <span class="font-mono text-xs text-brand-muted">Case Study Breakdown · 8 min read</span>
+        <h3 class="text-lg font-bold mt-3 mb-2">Resolving Daylight Glare Through Parametric Louvers</h3>
+        <p class="text-brand-muted text-sm mb-4">A technical breakdown of solar study data used to derive facade depth without sacrificing interior views.</p>
+        <a href="#projects" class="font-mono text-xs text-white hover:underline">Cross-reference with: Civic Forum →</a>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="p-6 rounded-xl bg-brand-surface border border-brand-border hover:border-neutral-500 transition">
+        <span class="font-mono text-xs text-brand-muted">Studio Philosophy · 4 min read</span>
+        <h3 class="text-lg font-bold mt-3 mb-2">Why Fast Visual R&D Accelerates Contract Approvals</h3>
+        <p class="text-brand-muted text-sm mb-4">Moving past wireframes early allows cross-discipline teams to flag structural mismatches before DD phase.</p>
+        <a href="#projects" class="font-mono text-xs text-white hover:underline">Cross-reference with: Aura Tower →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= FUTURE PRODUCT / BOOK TEASER ================= -->
+  <section id="product" class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <div class="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-brand-surface to-[#222222] border border-brand-border flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="max-w-xl">
+        <span class="font-mono text-xs text-amber-400 uppercase tracking-widest">[ Coming Soon — Miniguide / Publication ]</span>
+        <h3 class="text-2xl md:text-3xl font-bold mt-2 mb-3">The Architectural Visualization Field Handbook</h3>
+        <p class="text-brand-muted text-sm leading-relaxed">
+          A concise practical guide covering lighting setups, material realism, composition rules, and workflow blueprints designed specifically for emerging architects and 3D visualizers.
+        </p>
+      </div>
+      <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+        <input type="email" placeholder="Enter your email" class="bg-black/60 border border-brand-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white transition" />
+        <button class="bg-white text-black font-mono text-xs px-6 py-3 rounded-lg uppercase tracking-wider font-bold hover:bg-neutral-200 transition whitespace-nowrap">
+          Notify Me When Live
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS (PLACEHOLDER TEMPLATE) ================= -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 05. Endorsements ]</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-12">Client & Colleague Feedback</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 rounded-xl bg-brand-surface border border-brand-border">
+        <p class="text-brand-muted text-sm italic mb-6">
+          "[Add your first testimonial here: 'Their ability to translate our rough sketches into photorealistic imagery helped us secure the international bid ahead of schedule. Exceptional spatial awareness.']"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono text-xs text-white">AP</div>
+          <div>
+            <div class="font-bold text-sm">[Architect Name / Principal]</div>
+            <div class="text-brand-muted text-xs font-mono">[Studio / Company Name, New York]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-xl bg-brand-surface border border-brand-border">
+        <p class="text-brand-muted text-sm italic mb-6">
+          "[Add your second testimonial here: 'Reliable, agile, and understands construction logic just as well as rendering aesthetics. Seamless communication on remote contracts.']"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono text-xs text-white">DM</div>
+          <div>
+            <div class="font-bold text-sm">[Design Director]</div>
+            <div class="text-brand-muted text-xs font-mono">[Architecture Practice, London / Remote]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQS (ACCORDION) ================= -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-brand-border">
+    <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 06. Common Questions ]</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-12">Frequently Asked Questions</h2>
+
+    <div class="max-w-3xl space-y-4">
+      <!-- FAQ 1 -->
+      <details class="group bg-brand-surface rounded-xl border border-brand-border p-6 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center cursor-pointer font-medium text-base">
+          <span>Are you available for contract, hybrid, or full-time positions?</span>
+          <span class="transition group-open:rotate-180">↓</span>
+        </summary>
+        <p class="text-brand-muted text-sm mt-4 leading-relaxed">
+          Yes. I work flexibly across multiple engagement models: project-based contract sprints, ongoing remote retainers, or dedicated full-time roles (both in-office, remote, or hybrid arrangements).
+        </p>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="group bg-brand-surface rounded-xl border border-brand-border p-6 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center cursor-pointer font-medium text-base">
+          <span>How do you handle time zones and international clients?</span>
+          <span class="transition group-open:rotate-180">↓</span>
+        </summary>
+        <p class="text-brand-muted text-sm mt-4 leading-relaxed">
+          I serve clients throughout North America and internationally with synchronized overlap hours, async video updates (Loom), and structured milestone sign-offs.
+        </p>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="group bg-brand-surface rounded-xl border border-brand-border p-6 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex justify-between items-center cursor-pointer font-medium text-base">
+          <span>What files do you need to start a visualization project?</span>
+          <span class="transition group-open:rotate-180">↓</span>
+        </summary>
+        <p class="text-brand-muted text-sm mt-4 leading-relaxed">
+          I can work from 3D models (Rhino, Revit, SketchUp, FBX/OBJ), 2D CAD drawings, or hand sketches and reference mood boards.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <span class="font-mono text-xs text-brand-muted uppercase tracking-widest">[ 07. Contact & Inquiries ]</span>
+        <h2 class="text-4xl md:text-6xl font-bold mt-2 mb-6">Let's build something remarkable.</h2>
+        <p class="text-brand-muted text-sm leading-relaxed mb-8 max-w-md">
+          Whether you have an upcoming competition, a contract visualization need, or a full-time position opening at your firm, get in touch directly.
+        </p>
+
+        <div class="space-y-4 font-mono text-sm">
+          <div>
+            <span class="text-brand-muted block text-xs">DIRECT INQUIRIES:</span>
+            <!-- CHANGE YOUR EMAIL HERE -->
+            <a href="mailto:your.email@example.com" class="text-white hover:underline text-lg font-bold">your.email@example.com</a>
+          </div>
+          <div>
+            <span class="text-brand-muted block text-xs">LOCATION & TIMEZONE:</span>
+            <span class="text-white">[City, State / Available Globally]</span>
+          </div>
+          <div>
+            <span class="text-brand-muted block text-xs">SOCIAL & PROFESSIONAL:</span>
+            <div class="flex gap-4 mt-2 text-xs">
+              <a href="#" class="text-brand-muted hover:text-white transition">[LinkedIn]</a>
+              <a href="#" class="text-brand-muted hover:text-white transition">[Instagram / Portfolio]</a>
+              <a href="#" class="text-brand-muted hover:text-white transition">[GitHub / Behance]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Contact Form -->
+      <div class="bg-brand-surface p-8 rounded-xl border border-brand-border">
+        <form action="mailto:your.email@example.com" method="post" enctype="text/plain" class="space-y-4">
+          <div>
+            <label class="block text-xs font-mono text-brand-muted mb-2 uppercase">Your Name & Company</label>
+            <input type="text" name="name" required class="w-full bg-[#121212] border border-brand-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white transition" placeholder="e.g. Jane Doe, Studio Arch" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-brand-muted mb-2 uppercase">Your Email</label>
+            <input type="email" name="email" required class="w-full bg-[#121212] border border-brand-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white transition" placeholder="jane@studio.com" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-brand-muted mb-2 uppercase">Engagement Type</label>
+            <select name="type" class="w-full bg-[#121212] border border-brand-border rounded-lg px-4 py-3 text-sm text-brand-muted focus:outline-none focus:border-white transition">
+              <option>Contract Project</option>
+              <option>Full-Time Role (Office / Hybrid / Remote)</option>
+              <option>Visualization Sprint</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-brand-muted mb-2 uppercase">Message / Project Brief</label>
+            <textarea name="message" rows="4" required class="w-full bg-[#121212] border border-brand-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white transition" placeholder="Tell me about your project, timeline, or position..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-white text-black font-mono text-xs font-bold py-4 rounded-lg uppercase tracking-wider hover:bg-neutral-200 transition">
+            Send Inquiry Via Email →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-brand-border py-12 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-brand-muted">
+    <div>&copy; 2026 [YOUR NAME]. Architectural Design & Visual Development.</div>
+    <div>Designed for High-Performance Portfolio Presentation.</div>
+  </footer>
+
+  <!-- ================= CASE STUDY INTERACTIVE MODAL ================= -->
+  <div id="projectModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+    <div class="bg-brand-surface border border-brand-border max-w-3xl w-full rounded-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-brand-border flex items-center justify-between sticky top-0 bg-brand-surface z-10">
+        <h3 id="modalTitle" class="text-xl font-bold">Project Case Study</h3>
+        <button onclick="closeModal()" class="font-mono text-sm px-3 py-1 rounded-full border border-brand-border hover:bg-white hover:text-black transition">Close [ESC]</button>
+      </div>
+      <div class="p-6 space-y-6">
+        <img id="modalImage" src="" alt="Project Render" class="w-full rounded-xl aspect-[16/9] object-cover" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs border-y border-brand-border/60 py-4">
+          <div><span class="text-brand-muted">ROLE:</span> <span id="modalRole">Lead Visualization & Schematic Design</span></div>
+          <div><span class="text-brand-muted">LOCATION:</span> <span id="modalLocation">United States / International</span></div>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-wider text-brand-muted mb-2">[ The Challenge ]</h4>
+          <p id="modalChallenge" class="text-sm text-[#E5E5EA] leading-relaxed"></p>
+        </div>
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-wider text-brand-muted mb-2">[ The Solution & Spatial Thinking ]</h4>
+          <p id="modalSolution" class="text-sm text-[#E5E5EA] leading-relaxed"></p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/40 border border-brand-border/80 flex items-center justify-between">
+          <span class="text-xs text-brand-muted">Want to read the detailed development breakdown?</span>
+          <a href="#blog" onclick="closeModal()" class="text-xs font-mono text-white underline">Read related Field Note →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Modals -->
+  <script>
+    const projectData = {
+      project1: {
+        title: "The Monolith Pavilion",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+        role: "Schematic Architecture & Visualization",
+        location: "Pacific Northwest, USA",
+        challenge: "Balancing high thermal mass concrete walls with dynamic daylight penetration in overcast climates without causing cold visual tones.",
+        solution: "Utilized angled light shafts and board-formed warm-aggregate concrete shaders. Simulated solar paths to articulate morning shadow gradients that draw visitors toward the central courtyard."
+      },
+      project2: {
+        title: "Aura Residential Tower",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+        role: "Art Direction & 3D Lighting",
+        location: "Miami, FL",
+        challenge: "Differentiating a 42-story tower within a saturated urban skyline during competitive zoning board reviews.",
+        solution: "Developed dusk-to-night cinematic light compositions highlighting the undulating balcony slab curves, emphasizing wind aerodynamic reliefs and luxury interior ambient glow."
+      },
+      project3: {
+        title: "Atelier Sanctuaria",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+        role: "Interior Architecture & Renders",
+        location: "Austin, TX",
+        challenge: "Addressing acoustic reverb in a minimalist double-height gallery without adding heavy textile furnishings.",
+        solution: "Concealed micro-perforated acoustic panels behind rhythmically spaced oak slats, visually captured using high-contrast grazing rim light."
+      },
+      project4: {
+        title: "Civic Forum & Library",
+        image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80",
+        role: "Competition Design Partner",
+        location: "International Competition",
+        challenge: "Integrating pedestrian thoroughfares through a municipal building while safeguarding library reading zones from noise.",
+        solution: "Engineered stepped cantilever terraces that funnel public movement externally while acting as acoustic baffles for interior reading halls."
+      }
+    };
+
+    function openModal(id) {
+      const data = projectData[id];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalImage').src = data.image;
+      document.getElementById('modalRole').innerText = data.role;
+      document.getElementById('modalLocation').innerText = data.location;
+      document.getElementById('modalChallenge').innerText = data.challenge;
+      document.getElementById('modalSolution').innerText = data.solution;
+      
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close modal on ESC key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
